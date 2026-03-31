@@ -1,0 +1,34 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite the software and the original Keemink et al. paper."
+title: "Keemink Admittance Control - MATLAB Reproduction"
+type: software
+authors:
+  - family-names: "Cheng"
+    given-names: "Pinhao"
+    email: "cpinhao98@gmail.com"
+repository-code: "https://github.com/pinhaocheng/keemink-admittance-reproduction"
+url: "https://github.com/pinhaocheng/keemink-admittance-reproduction"
+license: "MIT"
+date-released: 2026-03-31
+keywords:
+  - "MATLAB"
+  - "admittance control"
+  - "human-robot interaction"
+  - "frequency response"
+  - "reproduction study"
+abstract: "MATLAB reproduction of the uncoupled admittance-frequency-response figures from Keemink et al., Admittance control for physical human-robot interaction."
+preferred-citation:
+  type: article
+  title: "Admittance control for physical human-robot interaction"
+  authors:
+    - family-names: "Keemink"
+      given-names: "Arvid Q. L."
+    - family-names: "van der Kooij"
+      given-names: "Herman"
+    - family-names: "Stienen"
+      given-names: "Arno H. A."
+  journal: "The International Journal of Robotics Research"
+  year: 2018
+  volume: 37
+  issue: 11
+  doi: "10.1177/0278364918768950"

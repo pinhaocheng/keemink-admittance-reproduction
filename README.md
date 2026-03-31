@@ -39,6 +39,17 @@ This repository contains a MATLAB reproduction of the uncoupled admittance-frequ
 
 ---
 
+## 📚 How to Cite
+
+GitHub will surface citation metadata from [`CITATION.cff`](./CITATION.cff).
+
+If you use this repository, cite both:
+
+- this software repository
+- the original Keemink et al. paper linked above
+
+---
+
 ## 🚀 Quick Start
 
 From the repository root, you can reproduce all figures or select specific ones.
