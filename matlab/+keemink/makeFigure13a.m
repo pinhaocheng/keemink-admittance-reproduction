@@ -16,21 +16,9 @@ kd    = 25;    % Ns^2/m (kg)
 tau_d = 0.1;   % s
 
 Yv = 1 / (params.mv * s);
+Cfb = params.kp + params.ki / s + (kd * s) / (tau_d * s + 1);
 
-%% Reduced-order fit of the published panel
-% The literal PID closed-loop expression from the paper remains noticeably
-% broader in phase than the published Figure 13a trace. A compact
-% second-order correction around the derivative-filter frequency reproduces
-% the narrow dip seen in the paper while preserving the high-frequency
-% improvement over the baseline apparent admittance.
-wz = 2 * pi * 2.5;
-wp = 2 * pi * 4.0;
-zeta_z = 0.4;
-zeta_p = 0.8;
-
-diff_correction = (s^2 / wz^2 + 2 * zeta_z * s / wz + 1) / ...
-    (s^2 / wp^2 + 2 * zeta_p * s / wp + 1);
-Ya = minreal(systems.apparent * diff_correction, 1e-8);
+Ya = keemink.rigidClosedLoopAdmittance(params, Yv, Cfb);
 
 %% Baseline apparent admittance
 Ya_bar = systems.apparent;
