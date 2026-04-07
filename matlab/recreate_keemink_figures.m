@@ -16,25 +16,25 @@ output_paths = strings(0, 1);
 for current_target = targets(:).'
     switch current_target
         case "fig06a"
-            output_paths(end + 1, 1) = keemink.makeFigure6a(); %#ok<AGROW>
+            output_paths(end + 1, 1) = keemink.makeFigure6a(); 
         case "fig07a"
-            output_paths(end + 1, 1) = keemink.makeFigure7a(); %#ok<AGROW>
+            output_paths(end + 1, 1) = keemink.makeFigure7a(); 
         case "fig07b"
-            output_paths(end + 1, 1) = keemink.makeFigure7b(); %#ok<AGROW>
+            output_paths(end + 1, 1) = keemink.makeFigure7b(); 
         case "fig08"
-            output_paths(end + 1, 1) = keemink.makeFigure8(); %#ok<AGROW>
+            output_paths(end + 1, 1) = keemink.makeFigure8(); 
         case "fig09a"
-            output_paths(end + 1, 1) = keemink.makeFigure9a(); %#ok<AGROW>
+            output_paths(end + 1, 1) = keemink.makeFigure9a(); 
         case "fig10a"
-            output_paths(end + 1, 1) = keemink.makeFigure10a(); %#ok<AGROW>
+            output_paths(end + 1, 1) = keemink.makeFigure10a(); 
         case "fig11a"
-            output_paths(end + 1, 1) = keemink.makeFigure11a(); %#ok<AGROW>
+            output_paths(end + 1, 1) = keemink.makeFigure11a(); 
         case "fig12"
-            output_paths(end + 1, 1) = keemink.makeFigure12(); %#ok<AGROW>
+            output_paths(end + 1, 1) = keemink.makeFigure12(); 
         case "fig13a"
-            output_paths(end + 1, 1) = keemink.makeFigure13a(); %#ok<AGROW>
+            output_paths(end + 1, 1) = keemink.makeFigure13a(); 
         case "fig15a"
-            output_paths(end + 1, 1) = keemink.makeFigure15a(); %#ok<AGROW>
+            output_paths(end + 1, 1) = keemink.makeFigure15a();
         otherwise
             error("Unsupported target '%s'. Supported: %s, all.", ...
                 current_target, join(all_targets, ", "));

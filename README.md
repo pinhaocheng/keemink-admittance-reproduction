@@ -19,7 +19,7 @@ This repository contains a MATLAB reproduction of the uncoupled admittance-frequ
 ### ✅ Implemented Figure Recreations
 - `fig06a`
 - `fig07a` & `fig07b`
-- `fig08` *(partial implementation, some details still need to be ironed out)*
+- `fig08`
 - `fig09a`
 - `fig10a`
 - `fig11a`

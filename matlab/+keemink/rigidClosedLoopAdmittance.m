@@ -18,12 +18,18 @@ Cfb = tf(Cfb);
 Cff = tf(options.Cff);
 compensation = tf(options.Compensation);
 
-robot_impedance = ((params.mr + params.mps) * s) + params.br;
-measured_force_feedback = -params.mps * s + compensation;
+% Keep pre-sensor robot and post-sensor mass separate so that Gf
+% correctly scales Z_ps in the denominator (Keemink Appendix 3).
+Y_r_int = 1 / (params.mr * s + params.br);   % pre-sensor robot admittance
+Z_ps    = params.mps * s;                     % post-sensor impedance
+D_ps    = Z_ps - compensation;                % residual after compensation
+
 controller_drive = Cfb + Cff;
 
-numerator = 1 + kr * options.Gf + kr^2 * controller_drive * Yv;
-denominator = robot_impedance + kr^2 * Cfb - kr^2 * controller_drive * Yv * measured_force_feedback;
+num_inner = kr * options.Gf + kr^2 * controller_drive * Yv + 1;
+den_inner = kr^2 * controller_drive * Yv * D_ps ...
+          + kr^2 * Cfb ...
+          + Z_ps * (kr * options.Gf + 1);
 
-Ya = minreal(numerator / denominator, 1e-8);
+Ya = minreal(Y_r_int * num_inner / (Y_r_int * den_inner + 1), 1e-8);
 end
